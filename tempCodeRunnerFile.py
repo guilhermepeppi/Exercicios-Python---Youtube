@@ -1,1 +1,1 @@
-Amanda ama Pedro
+Ana Maria de Souza
