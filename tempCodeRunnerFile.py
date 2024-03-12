@@ -1,1 +1,1 @@
-nome
+Amanda ama Pedro
