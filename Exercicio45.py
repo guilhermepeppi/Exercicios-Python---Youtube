@@ -24,10 +24,12 @@ while True:
 
     # Imprimindo as jogadas
     print('\nJO KEN PO!!!')
-    print('ー' * 7)
+    print()
+    print('ー' * 12)
     print(f'Computador jogou {opcoes[jogada_computador]}')
     print(f'Jogador jogou {opcoes[jogada]}')
-    print('ー' * 7)
+    print('ー' * 12)
+    print()
 
     # Verificando o resultado
     if jogada == jogada_computador:
@@ -35,11 +37,12 @@ while True:
     elif (jogada == 0 and jogada_computador == 2) or \
          (jogada == 1 and jogada_computador == 0) or \
          (jogada == 2 and jogada_computador == 1):
-        print('Jogador vence!')
+        print('JOGADOR VENCEU!!')
     else:
-        print('Computador vence!')
+        print('COMPUTADOR VENCEU!!')
 
     # Pergunta ao jogador se ele deseja jogar novamente
+    print()
     jogar_novamente = input('Deseja jogar novamente? (s/n): ')
     if jogar_novamente.lower() != 's':
         break
