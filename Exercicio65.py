@@ -24,7 +24,7 @@ while continuar in 'Ss':
         print("Por favor, digite apenas números inteiros.")
 
     while True:
-        continuar = input('Quer continuar? [S/N]: ').upper().strip()
+        continuar = input('Quer continuar? [S/N]: ').upper().strip()[0]
         if continuar in ['S', 'N']:
             break
         else:
