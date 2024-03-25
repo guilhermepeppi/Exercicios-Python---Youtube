@@ -7,55 +7,38 @@
 # C) Uma lista com mulheres.
 # D) Uma lista com idade acima da média.
 
-# Inicializa uma lista vazia chamada "galera" para armazenar os dicionários de pessoa.
 galera = list()
-# Inicializa um dicionário vazio chamado "pessoa" para armazenar os dados de cada pessoa.
 pessoa = dict()
-# Inicializa uma variável para armazenar a soma das idades das pessoas.
 soma = média = 0
 
-# Loop principal para continuar a coleta de dados das pessoas.
 while True:
-    # Limpa o dicionário "pessoa" para armazenar os dados de uma nova pessoa.
     pessoa.clear()
-    # Solicita ao usuário que insira o nome da pessoa e armazena no dicionário "pessoa".
     pessoa['nome'] = str(input('Nome: '))
-    # Loop para garantir que o sexo inserido seja válido (M ou F) e armazena no dicionário "pessoa".
     while True:
         pessoa['sexo'] = str(input('Sexo [M/F]: ')).strip().upper()
         if pessoa['sexo'] in 'MF':
             break
         print('ERRO! Digite apenas M ou F.')
-    # Solicita ao usuário que insira a idade da pessoa e armazena no dicionário "pessoa".
     pessoa['idade'] = int(input('Idade: '))
-    # Adiciona a idade da pessoa à variável de soma das idades.
     soma += pessoa['idade']
-    # Adiciona uma cópia do dicionário "pessoa" à lista "galera".
     galera.append(pessoa.copy())
-    # Loop para verificar se o usuário deseja continuar adicionando pessoas.
     while True:
         resposta = str(input('Quer continuar? [S/N]: ')).strip().upper()
         if resposta in 'SN':
             break
         print('ERRO! Digite apenas S ou N.')
-    # Se a resposta for 'N', o loop principal é interrompido e a execução do programa é encerrada.
     if resposta == 'N':
         break
 
-# Imprime uma linha de separação.
 print('-=' * 30)
-# Imprime o total de pessoas cadastradas.
 print(f'A) Ao todo temos {len(galera)} pessoas cadastradas')
-# Calcula e imprime a média de idade das pessoas cadastradas.
 média = soma / len(galera)
 print(f'B) A média de idade é de {média:.2f} anos')
-# Imprime os nomes das mulheres cadastradas.
 print(f'C) As mulheres cadastradas foram ', end='')
 for p in galera:
     if p['sexo'] in 'Ff':
         print(f'{p["nome"]} ', end='')
 print()
-# Imprime os dados das pessoas que têm idade acima da média.
 print(f'D) Lista de pessoas que estão acima da média: ')
 for p in galera:
     if p["idade"] >= média:
@@ -63,5 +46,4 @@ for p in galera:
         for k, v in p.items():
             print(f'{k} = {v}', end='')
         print()
-# Imprime uma mensagem de encerramento.
 print('<< ENCERRADO >>')
