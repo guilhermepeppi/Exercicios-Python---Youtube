@@ -11,6 +11,7 @@
 galera = list()
 # Inicializa um dicionário vazio chamado "pessoa" para armazenar os dados de cada pessoa.
 pessoa = dict()
+# Inicializa uma variável para armazenar a soma das idades das pessoas.
 soma = média = 0
 
 # Loop principal para continuar a coleta de dados das pessoas.
@@ -27,6 +28,7 @@ while True:
         print('ERRO! Digite apenas M ou F.')
     # Solicita ao usuário que insira a idade da pessoa e armazena no dicionário "pessoa".
     pessoa['idade'] = int(input('Idade: '))
+    # Adiciona a idade da pessoa à variável de soma das idades.
     soma += pessoa['idade']
     # Adiciona uma cópia do dicionário "pessoa" à lista "galera".
     galera.append(pessoa.copy())
@@ -42,20 +44,24 @@ while True:
 
 # Imprime uma linha de separação.
 print('-=' * 30)
-# Imprime o último dicionário "pessoa" (que não foi limpo no final do loop).
+# Imprime o total de pessoas cadastradas.
 print(f'A) Ao todo temos {len(galera)} pessoas cadastradas')
+# Calcula e imprime a média de idade das pessoas cadastradas.
 média = soma / len(galera)
 print(f'B) A média de idade é de {média:.2f} anos')
+# Imprime os nomes das mulheres cadastradas.
 print(f'C) As mulheres cadastradas foram ', end='')
 for p in galera:
     if p['sexo'] in 'Ff':
         print(f'{p["nome"]} ', end='')
 print()
+# Imprime os dados das pessoas que têm idade acima da média.
 print(f'D) Lista de pessoas que estão acima da média: ')
 for p in galera:
-    if p["indade"] >= média:
+    if p["idade"] >= média:
         print('      ')
         for k, v in p.items():
             print(f'{k} = {v}', end='')
         print()
+# Imprime uma mensagem de encerramento.
 print('<< ENCERRADO >>')
