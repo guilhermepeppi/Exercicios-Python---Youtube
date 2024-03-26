@@ -10,14 +10,14 @@ import random
 def sorteia():
     numeros = []
     for _ in range(5):
-        numeros.append(random.randint(1, 100))  # Gera números aleatórios de 1 a 100
+        numeros.append(random.randint(1, 100))
     return numeros
 
 
 def somaPar(lista):
     soma = 0
     for num in lista:
-        if num % 2 == 0:  # Verifica se o número é par
+        if num % 2 == 0:
             soma += num
     return soma
 
