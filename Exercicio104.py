@@ -3,15 +3,14 @@
 # só que fazendo a validação para aceitar apenas um valor numérico.
 # Ex: n = leiaInt('Digite um n: ')
 
-def leiaInt(msg):
+def leiaInt(mensagem):
     while True:
-        try:
-            # Converte a entrada do usuário para um valor inteiro
-            valor = int(input(msg))
-            return valor
-        except ValueError:
-            print('\033[031mERRO! Digite um valor INTEIRO válido.\033[m')
+        entrada = input(mensagem)
+        if entrada.isdigit():  # Verifica se a entrada é composta apenas por dígitos
+            return int(entrada)
+        else:
+            print("Por favor, digite um valor numérico válido.")
 
 
-n = leiaInt('Digite um número: ')
+n = leiaInt('Digite um número inteiro: ')
 print(f'Você acabou de digitar o número {n}')
