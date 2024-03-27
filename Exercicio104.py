@@ -6,6 +6,7 @@
 def leiaInt(msg):
     while True:
         try:
+            # Converte a entrada do usuário para um valor inteiro
             valor = int(input(msg))
             return valor
         except ValueError:
