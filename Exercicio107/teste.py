@@ -1,4 +1,4 @@
-from Exercicio107 import moeda
+import moeda
 
 preco = float(input('Digite o preço: R$'))
 
