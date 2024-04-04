@@ -1,10 +1,11 @@
-# Adicione o módulo moeda.py criado nos desafios anteriores,
-# uma função chamada resumo(), que mostre na tela algumas informações geradas
-# pelas funções que já temos no módulo criado até aqui.
+# Crie um pacote chamado utilidadesCeV que tenha dois módulos internos chamados moeda e dado.
+# Transfira todas as funções utilizadas nos desafios 107, 108 e 109
+# para o primeiro pacote e mantenha tudo funcionando.
 # ---
 # Adapte o código do desafio #107,
 # criando uma função adicional chamada moeda()
 # que consiga mostrar os números como um valor monetário formatado.
+
 
 def aumentar(preco=0, taxa=0, formato=False):
     resultado = preco + (preco * taxa / 100)
