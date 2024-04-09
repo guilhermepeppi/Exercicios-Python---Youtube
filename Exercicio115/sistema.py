@@ -17,9 +17,14 @@ while True:
     resposta = menu(['Ver pessoas cadastradas',
                      'Cadastrar nova pessoa', 'Sair do Sistema'])
     if resposta == 1:
+        # Listar conteudo do arquivo
         lerArquivo(arquivo)
     elif resposta == 2:
-        cabecalho('Opção 2')
+        # Cadastrar nova pessoa
+        cabecalho('NOVO CADASTRO')
+        nome = str(input('Nome: '))
+        idade = leiaInt('Idade: ')
+        cadastrar(arquivo, nome, idade)
     elif resposta == 3:
         cabecalho('Saindo do sistema...')
         break
