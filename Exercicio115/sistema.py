@@ -4,7 +4,27 @@
 # 1) Cadastrar uma nova passoa;
 # 2) Listar todas as pessoas cadastradas.
 
-import lib.interface
+from lib.interface import *
+from lib.arquivo import *
+from time import sleep
 
-cabecalho('SISTEMA ARQUIVO')
-menu(['opcao1', 'opcao2', 'opcao3'])
+arquivo = 'cursoemvideo.txt'
+
+if arquivoExiste(arquivo):
+    print('Arquivo encontrado')
+else:
+    print('Arquivo não encontrado')
+
+while True:
+    resposta = menu(['Ver pessoas cadastradas',
+                     'Cadastrar nova pessoa', 'Sair do Sistema'])
+    if resposta == 1:
+        cabecalho('Opção 1')
+    elif resposta == 2:
+        cabecalho('Opção 2')
+    elif resposta == 3:
+        cabecalho('Saindo do sistema...')
+        break
+    else:
+        print('\033[31mERRO! Digite uma opção válida.\033[m')
+    sleep(1)
